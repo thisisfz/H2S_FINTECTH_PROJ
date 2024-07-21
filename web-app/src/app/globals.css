@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+  transition: all;
+}
+
+body {
+  @apply flex flex-col h-screen;
+}
+
+input {
+  @apply outline-none py-2;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.credit-card {
+  @apply w-[480px] max-w-full h-[300px] items-center rounded-xl flex flex-col justify-between relative px-4 py-6 transition-all overflow-hidden;
+}
+
+.credit-overlay {
+  @apply absolute top-0 left-0 w-0 h-full transition-all bg-blue-500;
+}
+
+.card-num-box {
+  @apply flex justify-between items-center gap-1 sm:gap-2;
+}
+
+.card-num-box input:focus {
+  @apply border-blue-500 transition-all;
+}
+
+.card-num-input {
+  @apply flex-1 w-full max-w-[100px] sm:px-4 py-2 bg-transparent border-2 border-white text-white rounded-xl outline-none text-center;
+}
+
+.credit-card .credit-user {
+  @apply border-b-2 border-gray-300 bg-transparent pl-2;
+}
+
+.credit-card .valid-thru {
+  @apply flex items-center;
+}
+
+.credit-card .valid-thru input {
+  @apply w-10 bg-transparent border-b-2 text-white text-center;
+}
+
+.credit-card .amount {
+  @apply flex-1 px-4 bg-transparent text-white;
+}
+
+.currency {
+  @apply bg-white text-black font-medium h-full text-center outline-none w-fit;
+}
+
+.credit-card .cvv {
+  @apply max-w-[50px] h-full text-center font-semibold bg-transparent border-2 text-white;
+}
+
+.btn {
+  @apply min-w-fit w-[300px] mx-auto max-w-full text-center p-4 my-2 transition-all;
+}
+
+.btn:disabled {
+  @apply bg-slate-300 text-black;
+}
+
+.fraud {
+  @apply bg-red-600;
+  animation: shake 0.3s linear forwards;
+  transition: all linear;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.not-fraud {
+  @apply bg-blue-600;
+  animation: pop-up 0.5s linear;
+  transition: all;
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(0.9);
+  }
+  25% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
